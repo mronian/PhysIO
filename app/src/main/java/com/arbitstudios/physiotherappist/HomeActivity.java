@@ -28,7 +28,7 @@ public class HomeActivity extends Activity {
     private Sensor _linearAccelerationSensor;
     private Sensor _accelerometer;
 
-    private static String _serverIP = "10.132.90.180";
+    private static String _serverIP = "10.137.231.121";
     private static int _serverPort = 8000;
 
     private TextView _dataText;
