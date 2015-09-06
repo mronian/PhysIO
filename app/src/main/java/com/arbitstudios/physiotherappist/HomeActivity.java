@@ -59,8 +59,13 @@ public class HomeActivity extends Activity {
 
         // Initialize the Linear acceleration sensor
         _sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+<<<<<<< HEAD
         _linearAccelerationSensor = _sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         _accelerometer = _sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+=======
+        _linearAccelerationSensor = _sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
+        _accelerometer = _sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+>>>>>>> e8681568392c6eeac399673b4930b2a101efa8c8
 
         _dataText.setText("Press send to stream acceleration measurement");
         _isStreaming = false;
@@ -99,7 +104,11 @@ public class HomeActivity extends Activity {
                 out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
                 while (_connected) {
                     out.printf("lin,%.2f,%.2f,%.2f\n", _linX, _linY, _linZ);
+<<<<<<< HEAD
                     out.printf("ori,%.2f,%.2f,%.2f\n", _accX, _accY, _accZ);
+=======
+                    out.printf("acc,%.2f,%.2f,%.2f\n", _accX, _accY, _accZ);
+>>>>>>> e8681568392c6eeac399673b4930b2a101efa8c8
                     out.flush();
                     Thread.sleep(2);
                 }
